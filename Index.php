@@ -55,14 +55,14 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h1>
-                    <a href="index.html">Modernize</a>
+                    <a href="#">Umbala</a>
                 </h1>
                 <span>M</span>
             </div>
             <div class="profile-bg"></div>
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="index.html">
+                    <a href="#">
                         <i class="fas fa-th-large"></i>
                         Dashboard
                     </a>
@@ -75,30 +75,30 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="cards.html">Cards</a>
+                            <a href="#">Cards</a>
                         </li>
                         <li>
-                            <a href="carousels.html">Carousels</a>
+                            <a href="#">Carousels</a>
                         </li>
                         <li>
-                            <a href="forms.html">Forms</a>
+                            <a href="#">Forms</a>
                         </li>
                         <li>
-                            <a href="modals.html">Modals</a>
+                            <a href="#">Modals</a>
                         </li>
                         <li>
-                            <a href="tables.html">Tables</a>
+                            <a href="#">Tables</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="charts.html">
+                    <a href="#">
                         <i class="fas fa-chart-pie"></i>
                         Charts
                     </a>
                 </li>
                 <li>
-                    <a href="grids.html">
+                    <a href="#">
                         <i class="fas fa-th"></i>
                         Grid Layouts
                     </a>
@@ -111,31 +111,31 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu1">
                         <li>
-                            <a href="404.html">404</a>
+                            <a href="#">404</a>
                         </li>
                         <li>
-                            <a href="500.html">500</a>
+                            <a href="#">500</a>
                         </li>
                         <li>
-                            <a href="blank.html">Blank</a>
+                            <a href="#">Blank</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="mailbox.html">
+                    <a href="#">
                         <i class="far fa-envelope"></i>
                         Mailbox
                         <span class="badge badge-secondary float-md-right bg-danger">5 New</span>
                     </a>
                 </li>
                 <li>
-                    <a href="widgets.html">
+                    <a href="#">
                         <i class="far fa-window-restore"></i>
                         Widgets
                     </a>
                 </li>
                 <li>
-                    <a href="pricing.html">
+                    <a href="#">
                         <i class="fas fa-table"></i>
                         Pricing Tables
                     </a>
@@ -148,18 +148,18 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu3">
                         <li>
-                            <a href="login.html">Login</a>
+                            <a href="#">Login</a>
                         </li>
                         <li>
-                            <a href="register.html">Register</a>
+                            <a href="#">Register</a>
                         </li>
                         <li>
-                            <a href="forgot.html">Forgot password</a>
+                            <a href="#">Forgot password</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="#">
                         <i class="far fa-map"></i>
                         Maps
                     </a>
@@ -298,7 +298,7 @@
                                         <i class="far fa-thumbs-up mr-3"></i>Support</h4>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.html">Logout</a>
+                                <a class="dropdown-item" href="#">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -372,156 +372,14 @@
             <!--// Simple-chart -->
 
             <!--// Bar-Chart -->
-            <div class="outer-w3-agile mt-3">
+            <!-- <div class="outer-w3-agile mt-3">
                 <h4 class="tittle-w3-agileits mb-4">Bar Chart</h4>
                 <div id="chart-1"></div>
-            </div>
+            </div> -->
             <!--// Bar-Chart -->
 
             <!--// three-grids -->
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Calender -->
-                    <div class="outer-w3-agile col-xl mt-3">
-                        <h4 class="tittle-w3-agileits mb-4">Multi range Calender</h4>
-                        <div class="multi-select-calender"></div>
-                        <div class="box"></div>
-                    </div>
-                    <!--// Calender -->
-                    <!-- Profile -->
-                    <div class="outer-w3-agile col-xl mt-3 mx-xl-3 p-xl-0 px-md-5">
-                        <div class="header">
-                            <div class="text">
-                                <img src="vendor/images/profile.jpg" class="img-fluid rounded-circle" alt="Responsive image">
-                                <h2>Matthew Scott</h2>
-                                <a href="mailto:info@example.com">
-                                    <p>@Lorem ipsum</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="container-flud">
-                            <div class="followers row">
-                                <div class="f-left col">
-                                    <a href="#">
-                                        <i class="far fa-comments"></i>
-                                    </a>
-                                </div>
-                                <div class="f-left col border-left border-right">
-                                    <a href="#">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                                <div class="f-left col">
-                                    <a href="#">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="prof-widgt-content">
-                            <li class="menu">
-                                <ul>
-                                    <li class="button">
-                                        <a href="#">
-                                            <i class="fas fa-envelope"></i> Messages
-                                            <span>13</span>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <ul class="icon-navigation">
-                                            <li>
-                                                <a href="#">Inbox
-                                                    <span class="float-right">[09]</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Outbox
-                                                    <span class="float-right">[01]</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sent messages
-                                                    <span class="float-right">[03]</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu">
-                                <ul>
-                                    <li class="button">
-                                        <a href="#">
-                                            <i class="fas fa-user"></i> Profile</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <ul class="icon-navigation">
-                                            <li>
-                                                <a href="#">Change your pic</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Change your username</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">About us</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Contact me</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--// Profile -->
-                    <!-- Browser stats -->
-                    <div class="outer-w3-agile col-xl mt-3">
-                        <h4 class="tittle-w3-agileits mb-4">Browser Stats</h4>
-                        <div class="stats-info stats-body">
-                            <ul class="list-unstyled">
-                                <li class="pb-3">GoogleChrome
-                                    <span class="float-right">85%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar green" style="width:85%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Firefox
-                                    <span class="float-right">35%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar yellow" style="width:35%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Internet Explorer
-                                    <span class="float-right">78%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar red" style="width:78%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Safari
-                                    <span class="float-right">50%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar blue" style="width:50%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Opera
-                                    <span class="float-right">80%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar light-blue" style="width:80%;"></div>
-                                    </div>
-                                </li>
-                                <li class="last py-md-4 py-3">Others
-                                    <span class="float-right">60%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar orange" style="width:60%;"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--// Browser stats -->
-                </div>
-            </div>
+            
             <!--// Three-grids -->
             <!-- Countdown -->
             <div class="outer-w3-agile mt-3 outer-w3-agile-bg">
