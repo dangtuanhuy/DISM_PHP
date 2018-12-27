@@ -34,6 +34,7 @@
     <!-- Common Css -->
     <link href="vendor/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--// Common Css -->
+    <link herf="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
     <!-- Nav Css -->
     <link rel="stylesheet" href="vendor/css/style4.css">
     <!--// Nav Css -->
@@ -57,25 +58,25 @@
                 <h1>
                     <a href="#">Umbala</a>
                 </h1>
-                <span>M</span>
+                <span></span>
             </div>
             <div class="profile-bg"></div>
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="#">
                         <i class="fas fa-th-large"></i>
-                        Dashboard
+                        Management
                     </a>
                 </li>
                 <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-laptop"></i>
-                        Components
+                        Management Education
                         <i class="fas fa-angle-down fa-pull-right"></i>
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Cards</a>
+                            <a href="?page=edu">Education</a>
                         </li>
                         <li>
                             <a href="#">Carousels</a>
@@ -305,87 +306,25 @@
                 </div>
             </nav>
             <!--// top-bar -->
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Stats -->
-                    <div class="outer-w3-agile col-xl">
-                        <div class="stat-grid p-3 d-flex align-items-center justify-content-between bg-primary">
-                            <div class="s-l">
-                                <h5>Projects</h5>
-                                <p class="paragraph-agileits-w3layouts text-white">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>340
-                                    <i class="far fa-edit"></i>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-success">
-                            <div class="s-l">
-                                <h5>Clients</h5>
-                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>250
-                                    <i class="far fa-smile"></i>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-danger">
-                            <div class="s-l">
-                                <h5>Tasks</h5>
-                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>232
-                                    <i class="fas fa-tasks"></i>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-warning">
-                            <div class="s-l">
-                                <h5>Employees</h5>
-                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>190
-                                    <i class="fas fa-users"></i>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!--// Stats -->
-                    <!-- Pie-chart -->
-                    <div class="outer-w3-agile col-xl ml-xl-3 mt-xl-0 mt-3">
-                        <h4 class="tittle-w3-agileits mb-4">Pie Chart</h4>
-                        <div id="chartdiv"></div>
-                    </div>
-                    <!--// Pie-chart -->
-                </div>
-            </div>
-            <!-- Simple-chart -->
-            <div class="outer-w3-agile mt-3">
-                <h4 class="tittle-w3-agileits mb-4">Graph</h4>
-                <div id="Hybridgraph" class="simple-chart1">
-                </div>
-            </div>
-            <!--// Simple-chart -->
-
-            <!--// Bar-Chart -->
-            <!-- <div class="outer-w3-agile mt-3">
-                <h4 class="tittle-w3-agileits mb-4">Bar Chart</h4>
-                <div id="chart-1"></div>
-            </div> -->
-            <!--// Bar-Chart -->
-
-            <!--// three-grids -->
-            
-            <!--// Three-grids -->
-            <!-- Countdown -->
-            <div class="outer-w3-agile mt-3 outer-w3-agile-bg">
-                <h4 class="tittle-w3-agileits mb-4 text-white">Countdown Timer</h4>
-                <div class="simply-countdown-custom" id="simply-countdown-custom"></div>
-            </div>
+<?php 
+include_once("config/connect.php");
+?>
+<?php 
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+    if ($page == "edu") {
+        include_once("resource/Education/Education.php");
+    }
+    if ($page == "addEdu") {
+        include_once("resource/Education/AddEducation.php");
+    }
+    if ($page == "educationUpdate") {
+        include_once("resource/Education/UpdateEducation.php");
+    }
+}
+else
+include_once('body.php')
+?>
             <!--// Countdown -->
             <!-- Copyright -->
             <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center">
