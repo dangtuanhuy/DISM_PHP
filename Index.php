@@ -12,7 +12,7 @@ else :
         echo $row['PersonnelName'];
     }
 }
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -174,15 +174,20 @@ else :
                         </li>
                     </ul>
                 </li>
+                <?php 
+                if (isset($_SESSION['Username']) && $_SESSION['Username'] != "") {
+                    ?>
                 <li>
-                    <a href="#">
+                    <a href="?page=UpdatePersonnel">
                         <i class="far fa-map"></i>
                         Maps
                     </a>
                 </li>
-                <li>
+                <?php 
+            } 
+            ?>
                 
-                </li>
+                <li class="nav-item"><a href="logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block"><?php if(isset($_SESSION["Username"])){PersonnelLogin($conn, $_SESSION["Username"]); echo "  <i class='fa fa-power-off text-danger'></i>"; }?></span></a></li>                                                                                                          
             </ul>
         </nav>
 
