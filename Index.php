@@ -1,4 +1,18 @@
 
+<?php 
+session_start();
+if (!isset($_SESSION['Username'])) :
+    echo '<meta http-equiv="refresh" content="0; URL=Login.php"/>';
+else :
+    function PersonnelLogin($conn, $PersonnelAccount)
+{
+    $sql_query_Personnel = "SELECT `PersonnelName` FROM `personnel` WHERE `PersonnelAccount` = '{$PersonnelAccount}'";
+    $sql_result_Personnel = mysqli_query($conn, $sql_query_Personnel) or die(mysql_error());
+    while ($row = $sql_result_Personnel->fetch_assoc()) {
+        echo $row['PersonnelName'];
+    }
+}
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +60,7 @@
     <!--web-fonts-->
     <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    
     <!--//web-fonts-->
 </head>
 
@@ -164,6 +179,9 @@
                         <i class="far fa-map"></i>
                         Maps
                     </a>
+                </li>
+                <li>
+                
                 </li>
             </ul>
         </nav>
@@ -321,9 +339,8 @@ if (isset($_GET['page'])) {
     if ($page == "educationUpdate") {
         include_once("resource/Education/UpdateEducation.php");
     }
-}
-else
-include_once('body.php')
+} else
+    include_once('body.php')
 ?>
             <!--// Countdown -->
             <!-- Copyright -->
@@ -339,6 +356,40 @@ include_once('body.php')
 
     <!-- Required common Js -->
     <script src='vendor/js/jquery-2.2.3.min.js'></script>
+    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js'></script>
+    <script language="javascript">
+                              $(document).ready(function() {
+                                var table = $('#myTable').DataTable( {
+                                  responsive: true,
+                                  "language": {
+                                    // "lengthMenu": "Hiển thị _MENU_ dòng dữ liệu trên một trang",
+                                    // "info": "Hiển thị _START_ trong tổng số _TOTAL_ dòng dữ liệu",
+                                    // "infoEmpty": "Dữ liệu rỗng",
+                                    // "emptyTable": "Chưa có dữ liệu nào",
+                                    // "processing": "Đang xử lý...",
+                                    // "search": "Tìm kiếm:",
+                                    "infoEmpty": "Empty data",
+                                    "emptyTable": "Data not available",
+                                    "processing": "Processing...",
+                                    "search": "Search:",
+                                    "loadingRecords": "Loading data...",
+                                    "zeroRecords": "Data not found",
+                                    // "loadingRecords": "Đang load dữ liệu...",
+                                    // "zeroRecords": "không tìm thấy dữ liệu",
+                                    // "infoFiltered": "(Được từ tổng số _MAX_ dòng dữ liệu)",
+                                    "paginate": {
+                                      "first": "|<",
+                                      "last": ">|",
+                                      "next": ">>",
+                                      "previous": "<<"
+                                    }
+                                  },
+                                  "lengthMenu": [[10, 15, 20, 25, 30, -1], [10, 15, 20, 25, 30, "All"]]
+                                } );
+        //new $.fn.dataTable.FixedHeader( table );
+      } );
+    </script>
     <!-- //Required common Js -->
     
     <!-- loading-gif Js -->
@@ -606,3 +657,6 @@ include_once('body.php')
 </body>
 
 </html>
+<?php
+endif;
+?>

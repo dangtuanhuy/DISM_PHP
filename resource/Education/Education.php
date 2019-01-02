@@ -14,14 +14,14 @@
 <?php 
 if (isset($_GET["ma"])) {
     $EducationId = $_GET["ma"];
-mysqli_query($conn, "DELETE FROM `education` WHERE EducationId={$EducationId}");
+mysqli_query($conn, "DELETE FROM `education` WHERE EducationId='{$EducationId}'");
 }
 ?>
 <?php
 if (isset($_POST['btnDelete']) && isset($_POST['checkbox'])) {
     for ($i = 0; $i < count($_POST['checkbox']); $i++) {
         $EducationId1 = $_POST['checkbox'][$i];
-    mysqli_query($conn, "DELETE FROM `education` WHERE EducationId={$EducationId1}");
+    mysqli_query($conn, "DELETE FROM `education` WHERE EducationId='{$EducationId1}'");
     }
 }
 ?>
@@ -31,11 +31,12 @@ if (isset($_POST['btnDelete']) && isset($_POST['checkbox'])) {
 	<form name="frmXoa" method="post" action="">
 		<h1 class="text-center">Manage Education</h1>
 		<p>
-			<a  class="btn btn-default" href="?page=addEdu">
-				<i class="fa fa-plus"></i>
+			<a  class="btn btn-success" href="?page=addEdu">
+				ADD
 			</a>
 
 		</p>
+        <br>
 		<table class="table-striped table-responsive table-bordered" id="myTable" border='1'>
 			<thead>
 				<tr>
@@ -61,11 +62,11 @@ if (isset($_POST['btnDelete']) && isset($_POST['checkbox'])) {
                         <td><?php echo $row["EducationName"] ?></td>
                         <td><?php echo $row["EducationDetails"] ?></td>
 						<td align='center'>
-							<a class="btn btn-default"   href="?page=edu&ma=<?php echo $row['EducationId']; ?>" onclick="return deleteConfirm()">
+							<a class="btn btn-danger"   href="?page=edu&ma=<?php echo $row['EducationId']; ?>" onclick="return deleteConfirm()">
 								Delete</a>
 							</td>
 							<td>
-								<a class="btn btn-default" href="?page=educationUpdate&ma=<?php echo $row['EducationId']; ?>">Update</a>
+								<a class="btn btn-primary" href="?page=educationUpdate&ma=<?php echo $row['EducationId']; ?>">Update</a>
 							</td>
 						</tr>
 						<?php
