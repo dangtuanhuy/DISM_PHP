@@ -56,6 +56,10 @@ if(isset($_POST['btnLogin']))
     if(mysqli_num_rows($result)==1)
     {
         $_SESSION["Username"] = $loginusername;
+        if(isset($_POST["chk"]) && $_POST["chk"]==1)
+        {
+            setcookie("Username",$loginusername,time()+86400*30);
+        }
         echo"<script>window.location.href='Index.php'</script>";
     }
     else
@@ -81,7 +85,7 @@ if(isset($_POST['btnLogin']))
                     </div>
                     <div class="d-sm-flex justify-content-between">
                         <div class="form-check col-md-6 text-sm-left text-center">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" class="form-check-input" id="chk" value="1">
                             <label class="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
                         <div class="forgot col-md-6 text-sm-right text-center">

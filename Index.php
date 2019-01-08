@@ -94,29 +94,24 @@ else :
                             <a href="?page=edu">Education</a>
                         </li>
                         <li>
-                            <a href="#">Carousels</a>
+                            <a href="?page=sub">Subject</a>
                         </li>
                         <li>
-                            <a href="#">Forms</a>
+                            <a href="#">Class Mate</a>
                         </li>
-                        <li>
-                            <a href="#">Modals</a>
-                        </li>
-                        <li>
-                            <a href="#">Tables</a>
-                        </li>
+                      
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fas fa-chart-pie"></i>
-                        Charts
+                    <a href="?page=per">
+                    <i class="fas fa-address-book"></i>
+                        Personnal
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fas fa-th"></i>
-                        Grid Layouts
+                    <a href="?page=student">
+                    <i class="fas fa-address-card"></i>
+                        Student
                     </a>
                 </li>
                 <li>
@@ -178,16 +173,17 @@ else :
                 if (isset($_SESSION['Username']) && $_SESSION['Username'] != "") {
                     ?>
                 <li>
-                    <a href="?page=UpdatePersonnel">
+                    <a href="?page=UpdatePersonnel1">
                         <i class="far fa-map"></i>
-                        Maps
+                        Update User
                     </a>
                 </li>
                 <?php 
-            } 
+            }
             ?>
-                
-                <li class="nav-item"><a href="logout.php" class="nav-link logout"> <span class="d-none d-sm-inline-block"><?php if(isset($_SESSION["Username"])){PersonnelLogin($conn, $_SESSION["Username"]); echo "  <i class='fa fa-power-off text-danger'></i>"; }?></span></a></li>                                                                                                          
+                <li><a href="Logout.php"><i class="far fa-map"></i>
+                        Logout</a></li>
+                                                                                                                         
             </ul>
         </nav>
 
@@ -344,6 +340,25 @@ if (isset($_GET['page'])) {
     if ($page == "educationUpdate") {
         include_once("resource/Education/UpdateEducation.php");
     }
+    if ($page == "sub") {
+        include_once("resource/Subject/Subject.php");
+    }
+    if ($page == "addsub") {
+        include_once("resource/Subject/AddSubject.php");
+    }
+    if ($page == "subjectupdate") {
+        include_once("resource/Subject/UpdateSubject.php");
+    }
+    //personnal
+    if ($page == "per") {
+        include_once("resource/Personnal/Personnal.php");
+    }
+    if ($page == "addper") {
+        include_once("resource/Personnal/AddPersonnal.php");
+    }
+    if ($page == "updateper") {
+        include_once("resource/Personnal/UpdatePersonnal.php");
+    }
 } else
     include_once('body.php')
 ?>
@@ -351,7 +366,7 @@ if (isset($_GET['page'])) {
             <!-- Copyright -->
             <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center">
                 <p>© 2018 Modernize . All Rights Reserved | Design by
-                    <a href="http://w3layouts.com/"> W3layouts </a>
+                    <a href="https://github.com/dangtuanhuy"> Hachi </a>
                 </p>
             </div>
             <!--// Copyright -->
