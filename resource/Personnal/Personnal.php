@@ -13,15 +13,15 @@
 
 <?php 
 if (isset($_GET["ma"])) {
-    $PersonnelId = $_GET["ma"];
-mysqli_query($conn, "DELETE FROM `personnel` WHERE PersonnelId='{$PersonnelId}'");
+    $PersonnelAccount = $_GET["ma"];
+mysqli_query($conn, "DELETE FROM `personnel` WHERE PersonnelAccount='{$PersonnelAccount}'");
 }
 ?>
 <?php
 if (isset($_POST['btnDelete']) && isset($_POST['checkbox'])) {
     for ($i = 0; $i < count($_POST['checkbox']); $i++) {
-        $PersonnelId1 = $_POST['checkbox'][$i];
-    mysqli_query($conn, "DELETE FROM `personnel` WHERE PersonnelId='{$PersonnelId1}'");
+        $PersonnelAccount1 = $_POST['checkbox'][$i];
+    mysqli_query($conn, "DELETE FROM `personnel` WHERE PersonnelAccount='{ $PersonnelAccount1}'");
     }
 }
 ?>
@@ -53,22 +53,22 @@ if (isset($_POST['btnDelete']) && isset($_POST['checkbox'])) {
 			<tbody>
 				<?php 
     $num = 1;
-    $result = mysqli_query($conn, "SELECT `PersonnelId`, `PersonnelName`, `PersonnelEmail`, `PersonnelPhone`, `PersonnelCetificate`,   `RoleName` FROM personnel JOIN role ON personnel.RoleId = role.RoleId");
+    $result = mysqli_query($conn, "SELECT PersonnelAccount, `PersonnelName`, `PersonnelEmail`, `PersonnelPhone`, `PersonnelCetificate`,   `RoleName` FROM personnel JOIN role ON personnel.RoleId = role.RoleId");
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         ?>
 					<tr>
-						<td><input name="checkbox[]" type="checkbox" id="checkbox[]"  class="form-control" value="<?php echo $row["PersonnelId"] ?>"></td>
+						<td><input name="checkbox[]" type="checkbox" id="checkbox[]"  class="form-control" value="<?php echo $row["$PersonnelAccount"] ?>"></td>
 						<td><?php echo $num ?></td>
 						<td><?php echo $row["PersonnelName"] ?></td>
                         <td><?php echo $row["PersonnelPhone"] ?></td>
                         <td><?php echo $row["PersonnelCetificate"] ?></td>
                         <td><?php echo $row["RoleName"]?></td>
 						<td align='center'>
-							<a class="btn btn-danger"   href="?page=per&ma=<?php echo $row['PersonnelId']; ?>" onclick="return deleteConfirm()">
+							<a class="btn btn-danger"   href="?page=per&ma=<?php echo $row['$PersonnelAccount']; ?>" onclick="return deleteConfirm()">
 								Delete</a>
 						</td>
 						<td>
-								<a class="btn btn-primary" href="?page=updateper&ma=<?php echo $row['PersonnelId']; ?>">Update</a>
+								<a class="btn btn-primary" href="?page=updateper&ma=<?php echo $row['$PersonnelAccount']; ?>">Update</a>
 						</td>
 						</tr>
 						<?php
